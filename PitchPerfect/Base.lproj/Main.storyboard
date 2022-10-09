@@ -16,22 +16,20 @@
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nya-yN-il2" userLabel="Record Button">
-                                <rect key="frame" x="117.66666666666669" y="373" width="155" height="155"/>
+                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nya-yN-il2" userLabel="Record Button">
+                                <rect key="frame" x="117.66666666666669" y="341" width="155" height="155"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="155" id="SMw-SD-mx5"/>
+                                    <constraint firstAttribute="height" constant="155" id="YBh-MW-3dF"/>
+                                </constraints>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                <state key="normal" title="" image="Record"/>
+                                <state key="normal" image="Record"/>
                                 <connections>
                                     <action selector="recordAudio:" destination="BYZ-38-t0r" eventType="touchUpInside" id="3AT-48-NCN"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tap to record" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gjz-El-v2c">
-                                <rect key="frame" x="144.66666666666666" y="530" width="101" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4oh-8m-ybx" userLabel="Stop Recording Button">
-                                <rect key="frame" x="163" y="581" width="64" height="64"/>
+                                <rect key="frame" x="163" y="730" width="64" height="64"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="64" id="5DD-bv-peQ"/>
                                     <constraint firstAttribute="width" constant="64" id="Atc-qp-GWx"/>
@@ -44,19 +42,23 @@
                                     <action selector="stopRecording:" destination="BYZ-38-t0r" eventType="touchUpInside" id="gnY-iC-f5T"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tap to record" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gjz-El-v2c">
+                                <rect key="frame" x="144.66666666666666" y="504" width="101" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="4oh-8m-ybx" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="753-hj-8ty"/>
-                            <constraint firstItem="Gjz-El-v2c" firstAttribute="centerX" secondItem="nya-yN-il2" secondAttribute="centerX" id="Btx-XP-JlN"/>
-                            <constraint firstItem="Gjz-El-v2c" firstAttribute="centerX" secondItem="nya-yN-il2" secondAttribute="centerX" id="R3u-Lq-APo"/>
-                            <constraint firstItem="nya-yN-il2" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="ieE-cu-uOX"/>
-                            <constraint firstItem="4oh-8m-ybx" firstAttribute="centerX" secondItem="Gjz-El-v2c" secondAttribute="centerX" id="jnS-Ug-Azj"/>
-                            <constraint firstItem="nya-yN-il2" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="kSR-Z4-sFa"/>
-                            <constraint firstItem="4oh-8m-ybx" firstAttribute="top" secondItem="Gjz-El-v2c" secondAttribute="bottom" constant="30" id="nC6-bY-p0J"/>
-                            <constraint firstItem="nya-yN-il2" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="yDc-Bc-0oN"/>
-                            <constraint firstItem="Gjz-El-v2c" firstAttribute="top" secondItem="nya-yN-il2" secondAttribute="bottom" constant="2" id="z3p-0v-zri"/>
+                            <constraint firstItem="nya-yN-il2" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" constant="-32" id="2z6-lK-z6s"/>
+                            <constraint firstItem="nya-yN-il2" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="IsT-ya-ZME"/>
+                            <constraint firstItem="4oh-8m-ybx" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="Wa3-LA-kNw"/>
+                            <constraint firstItem="4oh-8m-ybx" firstAttribute="top" relation="greaterThanOrEqual" secondItem="Gjz-El-v2c" secondAttribute="bottom" constant="16" id="ePn-1v-oMh"/>
+                            <constraint firstItem="Gjz-El-v2c" firstAttribute="centerX" secondItem="nya-yN-il2" secondAttribute="centerX" id="lEv-Nz-ffB"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="4oh-8m-ybx" secondAttribute="bottom" constant="16" id="tHp-Cr-YIP"/>
+                            <constraint firstItem="Gjz-El-v2c" firstAttribute="top" secondItem="nya-yN-il2" secondAttribute="bottom" constant="8" id="uRc-BT-NiS"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Sru-lh-CKN"/>
