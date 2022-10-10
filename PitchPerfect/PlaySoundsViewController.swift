@@ -51,19 +51,20 @@ class PlaySoundsViewController: UIViewController {
     @IBAction func stopSound(_ sender: AnyObject) {
         stopAudio()
     }
-
+    
+    // MARK: Lifecycles
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
         setupAudio()
     }
-    
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         configureUI(.notPlaying)
     }
     
-
- 
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        stopAudio()
+    }
 }
