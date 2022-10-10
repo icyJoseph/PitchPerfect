@@ -18,16 +18,14 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
         configureUI(.idle)
-        
         recordingButton.imageView?.contentMode = .scaleAspectFit
     }
     
     @IBAction func recordAudio(_ sender: Any) {
         configureUI(.recording)
 
-        let dirPath = NSSearchPathForDirectoriesInDomains(.documentDirectory,.userDomainMask,true)[0] as String
+        let dirPath = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask,true)[0] as String
         let recordingName = "recordedVoice.wav"
         let pathArray = [dirPath, recordingName]
         let filePath = URL(string: pathArray.joined(separator: "/"))
@@ -43,16 +41,13 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate {
         audioRecorder.record()
     }
     
-    
     @IBAction func stopRecording(_ sender: Any) {
         configureUI(.idle)
         audioRecorder.stop()
         
         let audioSession = AVAudioSession.sharedInstance()
-        
         try! audioSession.setActive(false)
     }
-    
     
     func audioRecorderDidFinishRecording(_ recorder: AVAudioRecorder, successfully flag: Bool) {
         if flag {
