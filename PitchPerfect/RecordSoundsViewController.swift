@@ -12,16 +12,12 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate {
 
     var audioRecorder: AVAudioRecorder!
     
+    // MARK: Outlets
     @IBOutlet weak var recordingButton: UIButton!
     @IBOutlet weak var stopRecordingButton: UIButton!
     @IBOutlet weak var recordingLabel: UILabel!
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        recordingButton.imageView?.contentMode = .scaleAspectFit
-        configureUI(recording: false)
-    }
-    
+    // MARK: Actions
     @IBAction func recordAudio(_ sender: Any) {
         configureUI(recording: true)
 
@@ -49,6 +45,14 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate {
         try! audioSession.setActive(false)
     }
     
+    // MARK: Lifecycles
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        recordingButton.imageView?.contentMode = .scaleAspectFit
+        configureUI(recording: false)
+    }
+    
+    // MARK: Implement AVAudioRecorderDelegate Protocol
     func audioRecorderDidFinishRecording(_ recorder: AVAudioRecorder, successfully flag: Bool) {
         if flag {
             performSegue(withIdentifier: "stopRecording", sender: audioRecorder.url)
@@ -57,6 +61,7 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate {
         }
     }
     
+    // MARK: Pass data to next view
     override func prepare(for segue: UIStoryboardSegue, sender: Any?){
         if segue.identifier == "stopRecording" {
             let playSoundsVC = segue.destination as! PlaySoundsViewController
@@ -65,6 +70,7 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate {
         }
     }
     
+    // MARK: UI helper
     func configureUI(recording: Bool) {
         if (recording) {
             recordingLabel.text = "Tap to record"
