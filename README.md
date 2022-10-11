@@ -14,4 +14,4 @@ you can playback your recording, by chosing of the 6 effects:
 - echo
 - reverb
 
-You may stop the playback at any time. The playback also stop is you navigate back to the initial view.
+You may stop the playback at any time. The playback also stops if you navigate back to the initial view.
